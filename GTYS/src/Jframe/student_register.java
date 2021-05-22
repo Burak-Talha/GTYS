@@ -113,7 +113,6 @@ public class student_register extends JFrame {
 		nameTF.setColumns(10);
 		String name = nameTF.getText();
 
-		
 		JButton btnNewButton = new JButton("Kayıt Ol");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -121,14 +120,17 @@ public class student_register extends JFrame {
 				if(tcTF.getText().length() != 11) {
 					tcError.setVisible(true);
 				}else{
-					// sıkıntı yoksa devam bloğu :
 					tcError.setVisible(false);
-					passwordError.setVisible(false);
 				}
+				//---------
 				if(passwordTF.getText().length() <= 4){
 					passwordError.setVisible(true);
 				}else{
 					passwordError.setVisible(false);
+				}
+				//---------
+				if(passwordTF.getText().length() > 4 && tcTF.getText().length() == 11) {
+					System.out.println("dataya gönderme işlemi bekleniyor");
 				}
 			}
 		});
