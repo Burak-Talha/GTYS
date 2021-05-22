@@ -25,7 +25,7 @@ public class student_register extends JFrame {
 	private JTextField nameTF;
 	private JTextField surnameTF;
 	private JTextField tcTF;
-	private JTextField textField;
+	private JTextField passwordTF;
 
 
 	public static void main(String[] args) {
@@ -56,16 +56,24 @@ public class student_register extends JFrame {
 		
 		String[] duzeyler = {"Düzey Seçiniz","5. Sınıf","6. Sınıf","7. Sınıf","8. Sınıf","9. Sınıf","10. Sınıf","11. Sınıf","12. Sınıf",};
 		
-		textField = new JTextField();
-		textField.setToolTipText("Adınızı Giriniz");
-		textField.setColumns(10);
-		textField.setBounds(100, 195, 147, 26);
-		layeredPane.add(textField);
+		JLabel passwordError = new JLabel("Şifre En Az 5 Haneli Olmalıdır");
+		passwordError.setForeground(Color.RED);
+		passwordError.setBounds(78, 220, 194, 16);
+		layeredPane.add(passwordError);
+		passwordError.setVisible(false);
+		
+		passwordTF = new JTextField();
+		passwordTF.setToolTipText("Adınızı Giriniz");
+		passwordTF.setColumns(10);
+		passwordTF.setBounds(100, 195, 147, 26);
+		layeredPane.add(passwordTF);
+		String password = passwordTF.getText();
 		
 		JLabel passwordText = new JLabel("  Şifre :");
 		passwordText.setForeground(Color.WHITE);
 		passwordText.setBounds(52, 200, 50, 16);
 		layeredPane.add(passwordText);
+		
 		JComboBox duzeyTF = new JComboBox(duzeyler);
 		duzeyTF.setToolTipText("Sınıf Düzeyinizi Seçin");
 		duzeyTF.setBounds(369, 145, 147, 27);
@@ -78,11 +86,11 @@ public class student_register extends JFrame {
 		layeredPane.add(tcTF);
 		String tc = tcTF.getText();
 		
-		JLabel label2 = new JLabel("T.C. No Boş Olamaz");
-		label2.setForeground(Color.RED);
-		label2.setBounds(379, 118, 150, 16);
-		layeredPane.add(label2);
-		label2.setVisible(false);
+		JLabel tcError = new JLabel("T.C. No 11 Haneli Olmalıdır");
+		tcError.setForeground(Color.RED);
+		tcError.setBounds(352, 121, 173, 16);
+		layeredPane.add(tcError);
+		tcError.setVisible(false);
 
 		
 		JLabel lblNewLabel_2 = new JLabel("Sınıf Düzeyi :");
@@ -110,11 +118,17 @@ public class student_register extends JFrame {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(tcTF.getText().length() < 11) {
-					label2.setVisible(true);
-				}else {
+				if(tcTF.getText().length() != 11) {
+					tcError.setVisible(true);
+				}else{
 					// sıkıntı yoksa devam bloğu :
-					label2.setVisible(false);
+					tcError.setVisible(false);
+					passwordError.setVisible(false);
+				}
+				if(passwordTF.getText().length() <= 4){
+					passwordError.setVisible(true);
+				}else{
+					passwordError.setVisible(false);
 				}
 			}
 		});
