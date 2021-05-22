@@ -2,7 +2,6 @@ package Jframe;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,7 +23,6 @@ public class gtysV1 extends JFrame {
 	private JPasswordField passwordTF;
 	private JTextField tcTF;
 
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,7 +39,6 @@ public class gtysV1 extends JFrame {
 	
 
 	public gtysV1() {
-		String tc = "123"; 
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(950, 300, 515, 423);
@@ -53,7 +50,7 @@ public class gtysV1 extends JFrame {
 		JLayeredPane layeredPane = new JLayeredPane();
 		contentPane.add(layeredPane, BorderLayout.CENTER);
 		
-		JButton btnNewButton_1 = new JButton("KayÄ±t Ol");
+		JButton btnNewButton_1 = new JButton("Kayıt Ol");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -79,7 +76,7 @@ public class gtysV1 extends JFrame {
 		passwordTF.setBounds(208, 179, 147, 26);
 		layeredPane.add(passwordTF);
 		
-		JButton btnNewButton = new JButton("GiriÅŸ Yap");
+		JButton btnNewButton = new JButton("Giriş Yap");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -91,12 +88,12 @@ public class gtysV1 extends JFrame {
 		btnNewButton.setBounds(132, 217, 117, 29);
 		layeredPane.add(btnNewButton);
 		
-		JLabel title = new JLabel("HoÅŸ Geldiniz");
+		JLabel title = new JLabel("Hoş Geldiniz");
 		title.setForeground(Color.WHITE);
 		title.setBounds(219, 81, 104, 42);
 		layeredPane.add(title);
 		
-		JLabel lblNewLabel = new JLabel("Å�ifre :");
+		JLabel lblNewLabel = new JLabel("Şifre :");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(167, 184, 61, 16);
 		layeredPane.add(lblNewLabel);
