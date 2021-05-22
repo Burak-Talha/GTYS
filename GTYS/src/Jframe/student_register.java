@@ -54,7 +54,7 @@ public class student_register extends JFrame {
 		JLayeredPane layeredPane = new JLayeredPane();
 		contentPane.add(layeredPane, BorderLayout.CENTER);
 		
-		String[] duzeyler = {"Düzey Seçiniz","5. Sınıf","6. Sınıf","7. Sınıf","8. Sınıf","9. Sınıf","10. Sınıf","11. Sınıf","12. Sınıf"};
+		String[] duzeyler = {"Düzey Seçiniz","5. Sınıf","6. Sınıf","7. Sınıf","8. Sınıf","9. Sınıf","10. Sınıf","11. Sınıf","12. Sınıf",};
 		
 		textField = new JTextField();
 		textField.setToolTipText("Adınızı Giriniz");
@@ -67,7 +67,7 @@ public class student_register extends JFrame {
 		passwordText.setBounds(52, 200, 50, 16);
 		layeredPane.add(passwordText);
 		JComboBox duzeyTF = new JComboBox(duzeyler);
-		duzeyTF.setToolTipText("Sınıf Düzeyi Seçin");
+		duzeyTF.setToolTipText("Sınıf Düzeyinizi Seçin");
 		duzeyTF.setBounds(369, 145, 147, 27);
 		layeredPane.add(duzeyTF);
 		
@@ -113,7 +113,7 @@ public class student_register extends JFrame {
 				if(tcTF.getText().length() < 11) {
 					label2.setVisible(true);
 				}else {
-					// sÄ±kÄ±ntÄ± yoksa devam bloÄŸu :
+					// sıkıntı yoksa devam bloğu :
 					label2.setVisible(false);
 				}
 			}
