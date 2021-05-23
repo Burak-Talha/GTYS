@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import gtysBoss.gtysBoss;
+
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
@@ -181,6 +184,9 @@ public class student_register extends JFrame {
 				//---------
 				if(passwordTF.getText().length() > 4 && tcTF.getText().length() == 11 && nameTF.getText().length() != 0 && surnameTF.getText().length() != 0 && mailTF.getText().length() > 10) {
 					System.out.println("dataya gönderme işlemi bekleniyor");
+					gtysV1 frame2 = new gtysV1();
+					frame2.setVisible(true);
+					dispose();
 				}
 			}
 		});
