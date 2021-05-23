@@ -2,11 +2,13 @@ package Jframe;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JPasswordField;
@@ -22,6 +24,8 @@ public class gtysV1 extends JFrame {
 	private JPanel contentPane;
 	private JPasswordField passwordTF;
 	private JTextField tcTF;
+	private JTextField mailTF;
+
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -36,12 +40,11 @@ public class gtysV1 extends JFrame {
 		});
 	}
 
-	
 
 	public gtysV1() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(950, 300, 515, 423);
+		setBounds(1050, 300, 515, 423);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -59,13 +62,23 @@ public class gtysV1 extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_1.setBounds(261, 217, 117, 29);
+		btnNewButton_1.setBounds(262, 254, 117, 29);
 		layeredPane.add(btnNewButton_1);
+		
+		JLabel mailText = new JLabel("Mail :");
+		mailText.setForeground(Color.WHITE);
+		mailText.setBounds(167, 180, 100, 16);
+		layeredPane.add(mailText);
 		
 		JLabel lblNewLabel_2 = new JLabel("T.C. No :");
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setBounds(149, 146, 61, 16);
 		layeredPane.add(lblNewLabel_2);
+		
+		mailTF = new JTextField();
+		mailTF.setBounds(208, 178, 147, 26);
+		layeredPane.add(mailTF);
+		mailTF.setColumns(10);
 		
 		tcTF = new JTextField();
 		tcTF.setBounds(208, 141, 147, 26);
@@ -73,7 +86,7 @@ public class gtysV1 extends JFrame {
 		tcTF.setColumns(10);
 		
 		passwordTF = new JPasswordField();
-		passwordTF.setBounds(208, 179, 147, 26);
+		passwordTF.setBounds(208, 216, 147, 26);
 		layeredPane.add(passwordTF);
 		
 		JButton btnNewButton = new JButton("Giriş Yap");
@@ -82,10 +95,19 @@ public class gtysV1 extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				String userTC = tcTF.getText();
 				String userPassword = passwordTF.getText();
-				
+				String userMail = mailTF.getText();
+
+				if(tcTF.getText().length() == 0 && passwordTF.getText().length() == 0 && mailTF.getText().length() == 0) {
+					JOptionPane.showMessageDialog(null,
+						    "Boşukları Doldurunuz",
+						    "Hata",
+						    JOptionPane.ERROR_MESSAGE);
+				}else{
+					//sıkıntı yoksa devam bloğu
+				}
 			}
 		});
-		btnNewButton.setBounds(132, 217, 117, 29);
+		btnNewButton.setBounds(133, 254, 117, 29);
 		layeredPane.add(btnNewButton);
 		
 		JLabel title = new JLabel("Hoş Geldiniz");
@@ -95,7 +117,7 @@ public class gtysV1 extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Şifre :");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(167, 184, 61, 16);
+		lblNewLabel.setBounds(167, 221, 61, 16);
 		layeredPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("T.C. No :");
