@@ -27,7 +27,7 @@ public class student_register extends JFrame {
 	private JTextField tcTF;
 	private JTextField passwordTF;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField mailTF;
 
 
 	public static void main(String[] args) {
@@ -93,6 +93,20 @@ public class student_register extends JFrame {
 		duzeyTF.setToolTipText("Sınıf Düzeyinizi Seçin");
 		duzeyTF.setBounds(374, 195, 147, 27);
 		layeredPane.add(duzeyTF);
+		String duzey = duzeyTF.getName();
+
+		
+		JLabel mailError = new JLabel("Mail En Az 11 Haneli Olmalıdır");
+		mailError.setForeground(Color.RED);
+		mailError.setBounds(340, 172, 196, 16);
+		layeredPane.add(mailError);
+		mailError.setVisible(false);
+		
+		mailTF = new JTextField();
+		mailTF.setBounds(369, 149, 147, 26);
+		layeredPane.add(mailTF);
+		mailTF.setColumns(10);
+		String mail = mailTF.getText();
 		
 		tcTF = new JTextField();
 		tcTF.setToolTipText("T.C. No Giriniz");
@@ -112,8 +126,6 @@ public class student_register extends JFrame {
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setBounds(284, 199, 92, 16);
 		layeredPane.add(lblNewLabel_2);
-		//String duzey = duzeyTF.getText();
-
 		
 		JLabel lblNewLabel_1_1 = new JLabel("T.C. No :");
 		lblNewLabel_1_1.setForeground(Color.WHITE);
@@ -161,7 +173,13 @@ public class student_register extends JFrame {
 					surnameError.setVisible(false);
 				}
 				//---------
-				if(passwordTF.getText().length() > 4 && tcTF.getText().length() == 11 && nameTF.getText().length() != 0 && surnameTF.getText().length() != 0) {
+				if(mailTF.getText().length() <= 10){
+					mailError.setVisible(true);
+				}else{
+					mailError.setVisible(false);
+				}
+				//---------
+				if(passwordTF.getText().length() > 4 && tcTF.getText().length() == 11 && nameTF.getText().length() != 0 && surnameTF.getText().length() != 0 && mailTF.getText().length() > 10) {
 					System.out.println("dataya gönderme işlemi bekleniyor");
 				}
 			}
@@ -197,7 +215,6 @@ public class student_register extends JFrame {
 		layeredPane.add(label);
 		ImageIcon img = new ImageIcon(this.getClass().getResource("/wallpaper.jpeg"));
 		label.setIcon(img);
-
 
 	}
 }
