@@ -16,8 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.FlowLayout;
-
 
 public class gtysV1 extends JFrame {
 
