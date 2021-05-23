@@ -2,7 +2,6 @@ package Jframe;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 
 public class gtysV1 extends JFrame {
 
@@ -42,7 +42,7 @@ public class gtysV1 extends JFrame {
 	public gtysV1() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(1050, 300, 515, 423);
+		setBounds(1050, 300, 536, 315);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -60,31 +60,31 @@ public class gtysV1 extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_1.setBounds(262, 254, 117, 29);
+		btnNewButton_1.setBounds(260, 183, 117, 29);
 		layeredPane.add(btnNewButton_1);
 		
 		JLabel mailText = new JLabel("Mail :");
 		mailText.setForeground(Color.WHITE);
-		mailText.setBounds(167, 180, 100, 16);
+		mailText.setBounds(165, 99, 100, 16);
 		layeredPane.add(mailText);
 		
 		JLabel lblNewLabel_2 = new JLabel("T.C. No :");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setBounds(149, 146, 61, 16);
+		lblNewLabel_2.setBounds(147, 65, 61, 16);
 		layeredPane.add(lblNewLabel_2);
 		
 		mailTF = new JTextField();
-		mailTF.setBounds(208, 178, 147, 26);
+		mailTF.setBounds(206, 97, 147, 26);
 		layeredPane.add(mailTF);
 		mailTF.setColumns(10);
 		
 		tcTF = new JTextField();
-		tcTF.setBounds(208, 141, 147, 26);
+		tcTF.setBounds(206, 60, 147, 26);
 		layeredPane.add(tcTF);
 		tcTF.setColumns(10);
 		
 		passwordTF = new JPasswordField();
-		passwordTF.setBounds(208, 216, 147, 26);
+		passwordTF.setBounds(206, 135, 147, 26);
 		layeredPane.add(passwordTF);
 		
 		JButton btnNewButton = new JButton("Giriş Yap");
@@ -95,27 +95,28 @@ public class gtysV1 extends JFrame {
 				String userPassword = passwordTF.getText();
 				String userMail = mailTF.getText();
 
-				if(tcTF.getText().length() == 0 && passwordTF.getText().length() == 0 && mailTF.getText().length() == 0) {
+				if(tcTF.getText().length() == 0 || passwordTF.getText().length() == 0 || mailTF.getText().length() == 0) {
 					JOptionPane.showMessageDialog(null,
 						    "Boşukları Doldurunuz",
 						    "Hata",
 						    JOptionPane.ERROR_MESSAGE);
 				}else{
 					//sıkıntı yoksa devam bloğu
+					System.out.println("Data kontrolü bekleniyor");
 				}
 			}
 		});
-		btnNewButton.setBounds(133, 254, 117, 29);
+		btnNewButton.setBounds(131, 183, 117, 29);
 		layeredPane.add(btnNewButton);
 		
 		JLabel title = new JLabel("Hoş Geldiniz");
 		title.setForeground(Color.WHITE);
-		title.setBounds(219, 81, 104, 42);
+		title.setBounds(208, 6, 104, 42);
 		layeredPane.add(title);
 		
 		JLabel lblNewLabel = new JLabel("Şifre :");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(167, 221, 61, 16);
+		lblNewLabel.setBounds(165, 140, 61, 16);
 		layeredPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("T.C. No :");
