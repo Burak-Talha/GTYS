@@ -50,7 +50,7 @@ public class student_register extends JFrame {
 	public student_register() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(1050, 300, 567, 394);
+		setBounds(1050, 300, 594, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
