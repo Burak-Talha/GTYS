@@ -96,9 +96,9 @@ public class student_register extends JFrame {
 		String duzey = duzeyTF.getName();
 
 		
-		JLabel mailError = new JLabel("Mail En Az 11 Haneli Olmalıdır");
+		JLabel mailError = new JLabel("Geçerli Bir Mail Girin");
 		mailError.setForeground(Color.RED);
-		mailError.setBounds(340, 172, 196, 16);
+		mailError.setBounds(379, 172, 157, 16);
 		layeredPane.add(mailError);
 		mailError.setVisible(false);
 		
@@ -222,6 +222,5 @@ public class student_register extends JFrame {
 		JButton back = new JButton("New button");
 		back.setBounds(471, 337, 117, 29);
 		layeredPane.add(back);
-		
 	}
 }
