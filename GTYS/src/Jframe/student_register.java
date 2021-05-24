@@ -6,9 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import gtysBoss.gtysBoss;
-
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
@@ -50,9 +47,9 @@ public class student_register extends JFrame {
 	public student_register() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(1050, 300, 594, 394);
+		setBounds(980, 300, 594, 394);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
@@ -151,7 +148,7 @@ public class student_register extends JFrame {
 		JButton btnNewButton = new JButton("Kayıt Ol");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				if(tcTF.getText().length() != 11) {
 					tcError.setVisible(true);
 				}else{
@@ -190,7 +187,7 @@ public class student_register extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(210, 243, 117, 29);
+		btnNewButton.setBounds(231, 267, 117, 29);
 		layeredPane.add(btnNewButton);
 		
 		surnameTF = new JTextField();
@@ -203,7 +200,7 @@ public class student_register extends JFrame {
 		
 		JLabel title = new JLabel("Kayıt Ol");
 		title.setForeground(Color.WHITE);
-		title.setBounds(236, 0, 809, 77);
+		title.setBounds(260, 0, 68, 77);
 		layeredPane.add(title);
 		
 		JLabel lblNewLabel = new JLabel("Soyad :");
@@ -221,6 +218,10 @@ public class student_register extends JFrame {
 		layeredPane.add(label);
 		ImageIcon img = new ImageIcon(this.getClass().getResource("/wallpaper.jpeg"));
 		label.setIcon(img);
-
+		
+		JButton back = new JButton("New button");
+		back.setBounds(471, 337, 117, 29);
+		layeredPane.add(back);
+		
 	}
 }
