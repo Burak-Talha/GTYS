@@ -42,9 +42,9 @@ public class gtysV1 extends JFrame {
 	public gtysV1() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(1050, 300, 536, 315);
+		setBounds(1000, 300, 536, 315);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
@@ -54,7 +54,7 @@ public class gtysV1 extends JFrame {
 		JButton btnNewButton_1 = new JButton("Kayıt Ol");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				student_register frame2 = new student_register();
 				frame2.setVisible(true);
 				dispose();
@@ -90,7 +90,7 @@ public class gtysV1 extends JFrame {
 		JButton btnNewButton = new JButton("Giriş Yap");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				String userTC = tcTF.getText();
 				String userPassword = passwordTF.getText();
 				String userMail = mailTF.getText();
@@ -123,13 +123,28 @@ public class gtysV1 extends JFrame {
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setBounds(213, 154, 61, 16);
 		
+		JButton btnNewButton_2 = new JButton("Geri");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				main m;
+				try {
+					m = new main();
+					m.setVisible(true);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(413, 258, 117, 29);
+		layeredPane.add(btnNewButton_2);
+		
 		JLabel label = new JLabel("");
 		label.setBounds(0, 0, 690, 2000);
 		layeredPane.add(label);
 		ImageIcon img = new ImageIcon(this.getClass().getResource("/wallpaper.jpeg"));
 		label.setIcon(img);
-
-
-
+		
 	}
 }
